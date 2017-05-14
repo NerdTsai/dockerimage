@@ -1,0 +1,34 @@
+<script>window.location.href='index.php';</script>
+Oh, you really quickly
+/* Following is a decryption program,
+Plaintext：ediclub  flag：AUST{ciphertext}
+
+var ciphertext;  
+var na = ciphertext;
+String.prototype._unshift = (function()  
+    {  
+        var _cset, _id, _beg, _len, _exp;  
+  
+        return  function( na, cset ) {  
+            switch (typeof cset) {  
+                case 'undefined':  
+                    cset = 'cjk';  
+                case 'string':  
+                    _cset = (cset == _id) ? null : _Charset[cset];  
+                    break;  
+                default: _cset = cset;  
+            }  
+            if ( _cset ) {  
+                _beg = parseInt(_cset[0].substring(1), 16);  
+                _len = parseInt(_cset[1].substring(1), 16) - _beg + 1;  
+                _exp = RegExp('[\\' + _cset[0] + '-\\' + _cset[1] + ']', 'g');  
+                _id  = cset;  
+            }  
+            var _sz = na.length,  
+                _cnt = 0;  
+            return  this.replace(_exp, function(s) {  
+                var _c = s.charCodeAt(0) - _beg;  
+                return  String.fromCharCode((_c-na[_cnt++%_sz]%_len+_len)%_len + _beg);  
+            });  
+        };  
+    })();  */
